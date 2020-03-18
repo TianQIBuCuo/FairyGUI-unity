@@ -162,6 +162,11 @@ namespace FairyGUI
         public static bool enhancedTextOutlineEffect = false;
 
         /// <summary>
+        /// 是否加载透明通道
+        /// </summary>
+		public static bool enableLoadAlphaTex=true;
+		
+        /// <summary>
         /// 
         /// </summary>
         public static VertAlignType richTextRowVerticalAlign = VertAlignType.Bottom;
