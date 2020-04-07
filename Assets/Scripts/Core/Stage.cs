@@ -867,6 +867,7 @@ namespace FairyGUI
         void HandleTouchEvents()
         {
             int tc = Input.touchCount;
+			bool isEventOnClick = false; //用于记录当前帧是否触发过OnClick事件 解决同时点击会触发多个事件
             for (int i = 0; i < tc; ++i)
             {
                 Touch uTouch = Input.GetTouch(i);
@@ -925,9 +926,14 @@ namespace FairyGUI
                             DisplayObject clickTarget = touch.ClickTest();
                             if (clickTarget != null)
                             {
+								if (Input.multiTouchEnabled == false && isEventOnClick)
+                                {
+                                    continue;
+                                }
                                 touch.clickCount = uTouch.tapCount;
                                 touch.UpdateEvent();
                                 clickTarget.BubbleEvent("onClick", touch.evt);
+								isEventOnClick = true;
                             }
                         }
 
