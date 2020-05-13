@@ -179,8 +179,11 @@ namespace FairyGUI
                         mats[j] = mat;
                     }
 
-                    if (shouldSetRenderQueue) //Set the object rendering in Transparent Queue as UI objects
-                        mat.renderQueue = 3000;
+					if (shouldSetRenderQueue)//Set the object rendering in Transparent Queue as UI objects
+                    {
+                        if (!mat.name.Contains("shadow"))       //解决英雄模型阴影问题
+                            mat.renderQueue = 3000;
+                    }
                 }
 
                 if (_cloneMaterial)
