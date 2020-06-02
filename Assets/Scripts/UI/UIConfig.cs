@@ -165,14 +165,17 @@ namespace FairyGUI
         public static VertAlignType richTextRowVerticalAlign = VertAlignType.Bottom;
 
         /// <summary>
+        /// Suggest to enable it on low dpi (e.g 960pi) screens.
+        /// </summary>
+        public static bool makePixelPerfect = false;
+
+
+        /// <summary>
         /// 是否加载透明通道
         /// </summary>
-		public static bool enableLoadAlphaTex=true;
-		
-        /// <summary>
-        /// 
-        /// </summary>
-        public static VertAlignType richTextRowVerticalAlign = VertAlignType.Bottom;
+		public static bool enableLoadAlphaTex = true;
+
+
 
         public enum ConfigKey
         {

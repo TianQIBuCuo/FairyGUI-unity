@@ -173,8 +173,11 @@ namespace FairyGUI
                     if (mat == null)
                         continue;
 
-                    if (shouldSetRQ && mat.renderQueue != 3000) //Set the object rendering in Transparent Queue as UI objects
-                        mat.renderQueue = 3000;
+                    if (shouldSetRQ && mat.renderQueue != 3000)//Set the object rendering in Transparent Queue as UI objects
+                    {
+                        if (!mat.name.Contains("shadow"))       //解决英雄模型阴影问题
+                            mat.renderQueue = 3000;
+                    }
 
                     if (mat.HasProperty(ShaderConfig.ID_Stencil) || mat.HasProperty(ShaderConfig.ID_Stencil2)
                         || mat.HasProperty(ShaderConfig.ID_ClipBox))
