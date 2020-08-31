@@ -1300,7 +1300,7 @@ namespace FairyGUI
                         Debug.LogWarning("FairyGUI: settings for '" + item.file + "' is wrong! Correct values are: (Generate Mip Maps=unchecked)");
                 }
 
-                if ((UIConfig.enableLoadAlphaTex &&tex != null)
+                if (UIConfig.enableLoadAlphaTex && tex != null)
                 {
                     fileName = fileName + "!a";
                     if (_fromBundle)
